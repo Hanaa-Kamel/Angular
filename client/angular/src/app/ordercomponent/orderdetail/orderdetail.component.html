@@ -1,0 +1,39 @@
+<!-- <div>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">image</th>
+        <th scope="col">Available qunatity</th>
+        <th scope="col">Need Quantity</th>
+        <th scope="col">Buy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prd of prdlist">
+        <td>{{prd.ID}}</td>
+        <td>{{prd.Name}}</td>
+        <td>{{prd.price | currency:"USD"}}</td>
+        <td><img [src]="prd.Imgpath" width="40" height="40"/></td>
+        <td>{{prd.Quantity}}</td>
+        <td><input type="number" #quantityinp/></td>
+        <td><input type="button" class="btn-primary" value="Buy" (click)="OnByclick(prd.price,quantityinp.value)"/></td>
+    </tbody>
+  </table>
+  <div>For Testing: Total Price: {{orderTotalPrice}}</div> -->
+ <span *ngFor="let prd of prdlist"  >
+    <span class="productDet" style="display: inline-flex;width: 303px;height: 380px;background-color: rgb(243, 241, 241);padding: 5px;margin: 10px;">
+      <img [src]="prd.ImageURL" height="350" width="200"/>
+      <div style="padding-top: 130px;">
+      <h6>Name : {{prd.Name}}</h6>
+      <h6>price : {{prd.UnitPrice}}</h6>
+      <h6>weight : {{prd.UnitWeight}}</h6>
+      <h6>title : {{prd.OfferTitle}}</h6>
+      <a routerLink="/Productdetails/{{prd.ProductID}}" class="btn-primary" style="padding: 4px;border-radius: 5px;">View Detail</a>
+      </div>
+    </span>    
+ </span>
+
+ 

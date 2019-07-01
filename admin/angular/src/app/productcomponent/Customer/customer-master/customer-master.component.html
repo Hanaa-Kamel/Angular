@@ -1,0 +1,53 @@
+<div style="">
+  <h1>Customer</h1><br/>
+  <!-- <input routerLink="/insertCustomer" routerLinkActive="active" class="btn-success" style="width: 100px;" value="+AddNew"/>
+    -->
+  <br/><br/>
+  <!-- Enter number of order<input type="number" min="1" [(ngModel)]="Ordernumber" name="orderid/> -->
+  <!-- <p>select category</p>
+  <select [(ngModel)]="selectedCatID" name="catt">
+    <option *ngFor="let cat of categorylist" [value]="cat.ID" name="selectcat">
+      {{cat.Name}}
+    </option>
+  </select> -->
+</div>
+<!-- <div>
+  <h3>catid:{{selectedCatID}}</h3>
+  <h3>TotalPrice:{{selectedCatID}}</h3>
+</div> -->
+<!-- <div style="background-color: gainsboro">
+  <app-orderdetail [selectedcatidfrommaster]="selectedCatID"></app-orderdetail>
+</div> -->
+<div>
+    <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">CustomerID</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">Email</th>
+            <!-- <th scope="col">image</th> -->
+            <th scope="col">Mobile</th>
+            <!-- <th scope="col">Need Quantity</th> -->
+             <!-- <th scope="col">Update</th>  -->
+            <th scope="col">Delete</th>
+            <th scope="col">ViewDetail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Cust of CustomerList">
+            <td>{{Cust.CustomerID}}</td>
+            <td>{{Cust.First_Name}}</td>
+            <td>{{Cust.Email}}</td>
+            <!-- <td><img [src]="prd.Imgpath" width="40" height="40"/></td> -->
+            <td>{{Cust.Mobile1}}</td>
+            <!-- <td><input type="number" #quantityinp/></td> -->
+            <!-- <td><a style="padding: 5px;" class="btn-primary" routerLink="/customerupdate/{{Cust.CustomerID}}" routerLinkActive="active" >Update</a></td>
+              -->
+            <td><input type="button" class="btn-danger" value="Delete" (click)="Deletecustomer(Cust.CustomerID)"/></td>
+            <td><a style="padding: 5px;"  routerLink="/customerdetails/{{Cust.CustomerID}}" routerLinkActive="active" class="btn-primary"  >ViewDetail</a></td>
+            
+          </tbody>
+      </table>
+       <!-- <div>For Testing: Total Price: {{orderTotalPrice}}</div>  -->
+    
+</div>

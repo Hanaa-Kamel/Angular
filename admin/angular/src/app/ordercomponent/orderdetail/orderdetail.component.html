@@ -1,0 +1,114 @@
+<div>
+  <h1>Order</h1>
+</div><hr>
+<div>
+<h3 style="color:green">customer of information</h3>
+<h5>CustomerID :{{customer.CustomerID}}</h5>
+<h5>Customer Name :{{customer.First_Name}}</h5>
+<h5>Customer Email :{{customer.Email}}</h5>
+<h5>Customer Mobile :{{customer.Mobile1}}</h5>
+</div>
+<!-- <div>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">image</th>
+        <th scope="col">Available qunatity</th>
+        <th scope="col">Need Quantity</th>
+        <th scope="col">Buy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prd of prdlist">
+        <td>{{prd.ID}}</td>
+        <td>{{prd.Name}}</td>
+        <td>{{prd.price | currency:"USD"}}</td>
+        <td><img [src]="prd.Imgpath" width="40" height="40"/></td>
+        <td>{{prd.Quantity}}</td>
+        <td><input type="number" #quantityinp/></td>
+        <td><input type="button" class="btn-primary" value="Buy" (click)="OnByclick(prd.price,quantityinp.value)"/></td>
+    </tbody>
+  </table>
+  <div>For Testing: Total Price: {{orderTotalPrice}}</div>
+</div> -->
+<div >
+  <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">OrderID</th>
+          <th scope="col">CustomerID</th>
+          <th scope="col">ShippingID</th>
+          <!-- <th scope="col">image</th> -->
+          <th scope="col">TotalAmount</th>
+          <th scope="col">Discount</th>
+          <th scope="col">OrderDate</th>
+          <th scope="col">DeliveryDate</th>
+          <!-- <th scope="col">Need Quantity</th> *ngFor="let prd of orderlist"-->
+          <!-- <th scope="col">Update</th>
+          <th scope="col">Delete</th>
+          <th scope="col">ViewDetail</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr >
+          <td>{{order.OrderID}}</td>
+          <td>{{order.CustomerID}}</td>
+          <td>{{order.ShippingID }}</td>
+          <!-- <td><img [src]="prd.Imgpath" width="40" height="40"/></td> -->
+          <td>{{order.TotalAmount}}</td>
+          <td>{{order.Discount}}</td>
+          <td>{{order.OrderDate}}</td>
+          <td>{{order.DeliveryDate }}</td>
+          <!-- <td><input type="number" #quantityinp/></td> -->
+          <!-- <td><input type="button" class="btn-primary" value="Update" (click)="OnByclick(prd.price,quantityinp.value)"/></td>
+          <td><input type="button" class="btn-primary" value="Delete" (click)="OnByclick(prd.price,quantityinp.value)"/></td>
+          <td><input type="button" class="btn-primary" value="ViewDetail" (click)="OnByclick(prd.price,quantityinp.value)"/></td>
+       -->
+        </tbody>
+    </table>
+     <!-- <div>For Testing: Total Price: {{orderTotalPrice}}</div>  -->
+  
+</div>
+<hr/>
+<div >
+  <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">OrderID</th>
+          <th scope="col">ProductID</th>
+          <th scope="col">Unitprice</th>
+          <!-- <th scope="col">image</th> -->
+          <th scope="col">quantity</th>
+          <th scope="col">Discount</th>
+          <th scope="col">totalamount</th>
+          <th scope="col">Date</th>
+          <!-- <th scope="col">Need Quantity</th> *ngFor="let prd of orderlist"-->
+          <!-- <th scope="col">Update</th>
+          <th scope="col">Delete</th>
+          <th scope="col">ViewDetail</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orderdetail">
+          <td>{{order.OrderDetailsID}}</td>
+          <td>{{order.ProductID}}</td>
+          <td>{{order.UnitPrice }}</td>
+          <!-- <td><img [src]="prd.Imgpath" width="40" height="40"/></td> -->
+          <td>{{order.Quantity}}</td>
+          <td>{{order.Discount}}</td>
+          <td>{{order.TotalAmount}}</td>
+          <td>{{order.OrderDate }}</td>
+          <!-- <td><input type="number" #quantityinp/></td> -->
+          <!-- <td><input type="button" class="btn-primary" value="Update" (click)="OnByclick(prd.price,quantityinp.value)"/></td>
+          <td><input type="button" class="btn-primary" value="Delete" (click)="OnByclick(prd.price,quantityinp.value)"/></td>
+          <td><input type="button" class="btn-primary" value="ViewDetail" (click)="OnByclick(prd.price,quantityinp.value)"/></td>
+       -->
+        </tbody>
+    </table>
+     <!-- <div>For Testing: Total Price: {{orderTotalPrice}}</div>  -->
+  
+</div>
+<div><button  class="btn btn-primary" (click)="goBack()">Back</button></div>

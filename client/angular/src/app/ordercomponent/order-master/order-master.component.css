@@ -1,0 +1,14 @@
+.btnmenu ::hover{
+
+background-color: white;
+}
+#imagebanner{
+   flex-direction: row-reverse;
+   padding: 20px;
+}
+
+
+
+
+
+

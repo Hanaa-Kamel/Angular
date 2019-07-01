@@ -1,0 +1,44 @@
+<div>
+    <h1>Category</h1><br/>
+    <input routerLink="/insertcategory" routerLinkActive="active" class="btn-success" style="width: 100px;" value="+AddNew"/>
+    <br/><br/>
+</div>
+<div>
+    <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <!-- <th scope="col">image</th> -->
+            <!-- <th scope="col">size</th>
+            <th scope="col">Weight</th> -->
+            <!-- <th scope="col">Price</th>
+            <th scope="col">Image</th> -->
+            <!-- <th scope="col">Need Quantity</th> *ngFor="let prd of orderlist"-->
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+            <th scope="col">ViewDetail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let category of categoryslist">
+            <td>{{category.CategoryID}}</td>
+            <td>{{category.Name}}</td>
+            <td>{{category.Description }}</td>
+            <!-- <td><img [src]="prd.Imgpath" width="40" height="40"/></td> -->
+            <!-- <td>{{Product.Size}}</td> -->
+            <!-- <td>{{Product.UnitWeight}}</td> -->
+            <!-- <td>{{Product.UnitPrice}}</td>
+            <td><img [src]="Product.ImageURL" width="50" height="50"/></td> -->
+            <!-- <td><input type="number" #quantityinp/></td> -->
+            <td><a style="padding: 5px;" class="btn-info" routerLink="/categoryUpdate/{{category.CategoryID}}" routerLinkActive="active" >Update</a></td>
+              <td><input type="button" class="btn-danger" value="Delete" (click)="DeleteCategory(category.CategoryID)"/></td>
+              <td><a style="padding: 5px;"  routerLink="/categorydetails/{{category.CategoryID}}" routerLinkActive="active" class="btn-primary"  >ViewDetail</a></td>
+          
+          </tr>
+          </tbody>
+      </table>
+       <!-- <div>For Testing: Total Price: {{orderTotalPrice}}</div>  -->
+    
+  </div>

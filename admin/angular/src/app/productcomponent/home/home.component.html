@@ -1,0 +1,50 @@
+
+<img [src]="imgpath" width="100%" height="120"/>
+<div style="background-color: indianred;color: white;font-size: 20px;padding: 10px;">
+<img [src]="Store_Logo" width="50" height="50"/>
+{{Store_name}}
+</div>
+<div  appHighlight>
+<h3 *ngIf="Discount!=0"> Discount:{{Discount}}</h3>
+</div>
+<div>
+  <select >
+    <option *ngFor="let c of CategoryList" name="category" id="c.ID">{{c.Name}}</option>
+  </select>
+</div>
+<button class="btn-primary" style="height: 30px;width: 200px;" (click)="ToggleActiveStatus()">Toggle</button>
+<div *ngIf="!IsPurshased">display table</div>
+<div *ngIf="IsPurshased">
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">qunatity</th>
+        <th scope="col">image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prd of ProductList">
+        <td>{{prd.ID}}</td>
+        <td>{{prd.Name}}</td>
+        <td>{{prd.price | currency:"USD"}}</td>
+        <td>{{prd.Quantity}}</td>
+        <td><img [src]="prd.Imgpath" width="40" height="40"/></td>
+    </tbody>
+  </table>
+  <div>For Testing: Total Price: {{orderTotalPrice}}</div>
+</div>
+<div>one way binding
+  <input type="text" #clientNameinp  [value]="ClientName"/>
+  <br>
+  <input type="text" value="{{ClientName}}" />
+  <span></span>
+</div>
+<div>two way binding
+  <input type="text" #clientNameinp  [(ngModel)]="ClientName"/>
+  <br>
+  <input type="text" value="{{ClientName}}" />
+  <span></span>
+</div>

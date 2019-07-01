@@ -1,0 +1,113 @@
+<form #newPrdFrm="ngForm" (ngSubmit)="saveproduct()">
+  <br><br>
+<div class="form-group row">
+  <label for="ProductID" class="col-sm-2 col-form-label">Product ID</label>
+  <div class="col-sm-10">
+    <input  
+      [(ngModel)]="NewProduct.ProductID"
+      type="number"
+      min="1"
+      class="form-control"
+      id="prdID"
+      name="prdID"
+      [value]="oldPrd.ProductID"
+      required
+    />
+    <!-- <h1>kkk:{{oldPrd.ProductID}}</h1> -->
+  </div>
+  <!-- <div [hidden]="PrdName.valid || PrdName.pristine" class="alert alert-danger">
+    Name is required
+  </div><br><br> -->
+</div>
+<!-- TODO: remove this: (Classes) {{ PrdName.className }}<br />
+TODO: remove this:(Test Binding:) {{ newPrd.Name }}<br /> -->
+<div class="form-group row">
+  <label for="Name" class="col-sm-2 col-form-label">Product Name</label>
+  <div class="col-sm-10">
+    <input
+      [(ngModel)]="NewProduct.Name"
+      type="text"
+      class="form-control"
+      id="prdName"
+      name="prdName"
+      [value]="oldPrd.Name"
+      
+      required
+    />
+  </div>
+</div>
+<!-- // -->
+<div class="form-group row">
+  <label for="CategoryID" class="col-sm-2 col-form-label">Category ID</label>
+  <div class="col-sm-10">
+    <input
+      [(ngModel)]="NewProduct.CategoryID"
+      type="number"
+      class="form-control"
+      id="prdcatid"
+      name="prdcatid"
+      [value]="oldPrd.CategoryID"
+      min="1"
+      required
+    />
+  </div>
+</div>
+<!-- // -->
+<div class="form-group row">
+  <label for="UnitPrice" class="col-sm-2 col-form-label">Price</label>
+  <div class="col-sm-10">
+    <input
+      [(ngModel)]="NewProduct.UnitPrice"
+      type="number"
+      class="form-control"
+      id="prdUnitPrice"
+      name="prdUnitPrice"
+      [value]="oldPrd.UnitPrice"
+      min="1"
+      required
+    />
+  </div>
+</div>
+<div class="form-group row">
+  <label for="QuantityPerUnit" class="col-sm-2 col-form-label"
+    >QuantityPerUnit</label
+  >
+  <div class="col-sm-10">
+    <input
+      [(ngModel)]="NewProduct.QuantityPerUnit"
+      type="text"
+      class="form-control"
+      id="QuantityPerUnit"
+      name="QuantityPerUnit"
+      [value]="oldPrd.QuantityPerUnit"
+      min="1"
+      required
+    />
+  </div>
+</div>
+<!-- // -->
+ <div class="form-group row">
+  <label for="SupplierID" class="col-sm-2 col-form-label"
+    >SupplierID</label
+  >
+  <div class="col-sm-10">
+    <input
+      [(ngModel)]="NewProduct.SupplierID"
+      type="number"
+      class="form-control"
+      id="SupplierID"
+      name="SupplierID"
+      [value]="oldPrd.QuantityPerUnit"
+      min="1"
+      required
+    />
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-sm-10">
+    <button [disabled]="!newPrdFrm.valid" type="submit" class="btn btn-primary">Save</button>
+    
+  </div>
+</div>
+</form>
+<span><button  class="btn btn-primary" (click)="goBack()">Back</button></span>

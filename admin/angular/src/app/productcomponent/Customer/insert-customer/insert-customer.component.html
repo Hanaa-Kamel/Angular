@@ -1,0 +1,133 @@
+<div>
+  <h1 style="color:green;">Customer</h1>
+</div>
+<form #newPrdFrm="ngForm" (ngSubmit)="savecustomer()">
+  <br><br>
+<div class="form-group row">
+  <label for="CustomerID" class="col-sm-2 col-form-label">Customer ID</label>
+  <div class="col-sm-10">
+    <input
+      #PrdName="ngModel"
+      [(ngModel)]="NewCustomer.CustomerID"
+      type="number"
+      min="1"
+      class="form-control"
+      id="CustomerID"
+      name="CustomerID"
+      placeholder="CustomerID"
+      required
+    />
+  </div>
+  <!-- <div [hidden]="PrdName.valid || PrdName.pristine" class="alert alert-danger">
+    Name is required
+  </div><br><br> -->
+</div>
+<!-- TODO: remove this: (Classes) {{ PrdName.className }}<br />
+TODO: remove this:(Test Binding:) {{ newPrd.Name }}<br /> -->
+<div class="form-group row">
+  <label for="First_Name" class="col-sm-2 col-form-label">First Name</label>
+  <div class="col-sm-10">
+    <input
+      [(ngModel)]="NewCustomer.First_Name"
+      type="text"
+      class="form-control"
+      id="First_Name"
+      name="First_Name"
+      placeholder="First_Name"
+     
+      required
+    />
+  </div>
+</div>
+<!-- // -->
+<div class="form-group row">
+  <label for="Last_Name" class="col-sm-2 col-form-label">Last Name</label>
+  <div class="col-sm-10">
+    <input
+      [(ngModel)]="NewCustomer.Last_Name"
+      type="text"
+      class="form-control"
+      id="Last_Name"
+      name="Last_Name"
+      placeholder="Last_Name"
+     
+      required
+    />
+  </div>
+</div>
+<!-- // -->
+<div class="form-group row">
+  <label for="Age" class="col-sm-2 col-form-label">Age</label>
+  <div class="col-sm-10">
+    <input
+      [(ngModel)]="NewCustomer.Age"
+      type="number"
+      class="form-control"
+      id="Age"
+      name="Age"
+      placeholder="Age"
+      min="20"
+      required
+    />
+  </div>
+</div>
+<div class="form-group row">
+  <label for="Email" class="col-sm-2 col-form-label"
+    >Email</label
+  >
+  <div class="col-sm-10">
+    <input
+      [(ngModel)]="NewCustomer.Email"
+      type="text"
+      class="form-control"
+      id="Email"
+      name="Email"
+      placeholder="Email"
+      
+      required
+    />
+  </div>
+</div>
+<!-- // -->
+ <div class="form-group row">
+  <label for="Address" class="col-sm-2 col-form-label"
+    >Address</label
+  >
+  <div class="col-sm-10">
+    <input
+      [(ngModel)]="NewCustomer.Address1"
+      type="text"
+      class="form-control"
+      id="Address"
+      name="Address"
+      placeholder="Address"
+      
+      required
+    />
+  </div>
+</div>
+<div class="form-group row">
+  <label for="Mobile" class="col-sm-2 col-form-label"
+    >Mobile</label
+  >
+  <div class="col-sm-10">
+    <input
+      [(ngModel)]="NewCustomer.Mobile1"
+      type="text"
+      class="form-control"
+      id="Mobile"
+      name="Mobile"
+      placeholder="Mobile"
+      
+      required
+    />
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-sm-10">
+    <button [disabled]="!newPrdFrm.valid" type="submit" class="btn btn-primary">Save</button>
+    
+  </div>
+</div>
+</form>
+<span><button  class="btn btn-primary" (click)="goBack()">Back</button></span>

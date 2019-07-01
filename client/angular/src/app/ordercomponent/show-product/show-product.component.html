@@ -1,0 +1,23 @@
+<div style="margin: auto auto auto auto;">
+  <span style=" background-color:white;padding: 5px;margin: 40px;display: inline-flex">
+    <img [src]="product.ImageURL" height="350" width="200"/>
+    <span style="padding-top: 130px;">
+    <h6>Name : {{product.Name}}</h6>
+    <h6>price : {{product.UnitPrice}}</h6>
+    <h6>weight : {{product.UnitWeight}}</h6>
+    <h6>title : {{product.OfferTitle}}</h6>
+    <h6>avaliable Quantity : {{product.UnitInStock}}</h6>
+    <!-- <h6>need Quantity : <input #quantityinp type="text"/></h6><br/> -->
+    <!-- <h5><button (click)="onBuyClick(product.productID)" class="btn-primary" style="border-radius: 5px;padding: 10px 25px 10px 25px;text-decoration: none;">AddToCart</button></h5>
+      <button class="btn-danger" (click)="goback()">Back</button>
+       -->
+      <h5><button (click)="sendid(product.ProductID)"  class="btn-primary" style="border-radius: 5px;padding: 10px 25px 10px 25px;text-decoration: none;">AddToCart</button></h5>
+      <button class="btn-danger" (click)="goback()">Back</button>
+<!--       
+      <button class="btn-danger" (click)="preciat(product.productID)">Back2</button>
+       -->
+  </span>
+  </span> 
+</div>
+
+<!-- routerLink="productDetails/{{product.productID}}" -->

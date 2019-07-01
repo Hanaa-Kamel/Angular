@@ -1,0 +1,15 @@
+.header
+{
+    background-color:black;
+    height: 60px;
+    padding: 10px;
+    flex-direction: row-reverse;
+    color:white;
+    font-size: 18px;
+}
+.header a{
+    cursor: pointer;
+    padding: 12px;
+    text-decoration: none;
+    color: white;
+}

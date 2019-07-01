@@ -1,0 +1,51 @@
+<form #newPrdFrm="ngForm" (ngSubmit)="savecategory()">
+    <br><br>
+  
+  <!-- TODO: remove this: (Classes) {{ PrdName.className }}<br />
+  TODO: remove this:(Test Binding:) {{ newPrd.Name }}<br /> -->
+  <div class="form-group row">
+    <label for="Name" class="col-sm-2 col-form-label">Category Name</label>
+    <div class="col-sm-10">
+      <input
+        [(ngModel)]="NewCategory.Name"
+        type="text"
+        class="form-control"
+        id="Name"
+        name="Name"
+        placeholder="Catergory Name"
+        
+        required
+      />
+    </div>
+  </div>
+  <!-- // -->
+  
+      <!-- <div [hidden]="PrdName.valid || PrdName.pristine" class="alert alert-danger">
+        Name is required
+      </div><br><br> -->
+  <!-- // -->
+  <div class="form-group row">
+    <label for="description" class="col-sm-2 col-form-label">description</label>
+    <div class="col-sm-10">
+      <input
+        [(ngModel)]="NewCategory.description"
+        type="text"
+        class="form-control"
+        id="description"
+        name="description"
+        placeholder="description"
+       
+        required
+      />
+    </div>
+  </div>
+ 
+  <!-- // -->
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button [disabled]="!newPrdFrm.valid" type="submit" class="btn btn-primary">Save</button>
+      
+    </div>
+  </div>
+  </form>
+  <span><button  class="btn btn-primary" (click)="goBack()">Back</button></span>

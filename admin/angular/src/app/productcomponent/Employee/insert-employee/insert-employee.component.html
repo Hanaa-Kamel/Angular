@@ -1,0 +1,134 @@
+<div>
+  <h1 style="color:green;">Employee</h1>
+</div>
+<hr/>
+<form #newPrdFrm="ngForm" (ngSubmit)="saveemployee()">
+  <br><br>
+<div class="form-group row">
+  <label for="EmployeeID" class="col-sm-2 col-form-label">Employee ID</label>
+  <div class="col-sm-10">
+    <input
+      #PrdName="ngModel"
+      [(ngModel)]="NewEmployee.EmpID"
+      type="number"
+      min="1"
+      class="form-control"
+      id="EmpID"
+      name="EmpID"
+      placeholder="EmpID"
+      required
+    />
+  </div>
+  <!-- <div [hidden]="PrdName.valid || PrdName.pristine" class="alert alert-danger">
+    Name is required
+  </div><br><br> -->
+</div>
+<!-- TODO: remove this: (Classes) {{ PrdName.className }}<br />
+TODO: remove this:(Test Binding:) {{ newPrd.Name }}<br /> -->
+<div class="form-group row">
+  <label for="FirstName" class="col-sm-2 col-form-label">Employee Name</label>
+  <div class="col-sm-10">
+    <input
+      [(ngModel)]="NewEmployee.FirstName"
+      type="text"
+      class="form-control"
+      id="FirstName"
+      name="FirstName"
+      placeholder="FirstName"
+      min="1"
+      required
+    />
+  </div>
+</div>
+<!-- // -->
+<div class="form-group row">
+  <label for="LastName" class="col-sm-2 col-form-label">LastName</label>
+  <div class="col-sm-10">
+    <input
+      [(ngModel)]="NewEmployee.LastName"
+      type="text"
+      class="form-control"
+      id="LastName"
+      name="LastName"
+      placeholder="LastName"
+      min="1"
+      required
+    />
+  </div>
+</div>
+<!-- // -->
+<div class="form-group row">
+  <label for="Age" class="col-sm-2 col-form-label">Age</label>
+  <div class="col-sm-10">
+    <input
+      [(ngModel)]="NewEmployee.Age"
+      type="number"
+      class="form-control"
+      id="Age"
+      name="Age"
+      placeholder="Age"
+      min="20"
+      required
+    />
+  </div>
+</div>
+<div class="form-group row">
+  <label for="Email" class="col-sm-2 col-form-label"
+    >Email</label
+  >
+  <div class="col-sm-10">
+    <input
+      [(ngModel)]="NewEmployee.Email"
+      type="text"
+      class="form-control"
+      id="Email"
+      name="Email"
+      placeholder="Email"
+      
+      required
+    />
+  </div>
+</div>
+<!-- // -->
+ <div class="form-group row">
+  <label for="Address" class="col-sm-2 col-form-label"
+    >Address</label
+  >
+  <div class="col-sm-10">
+    <input
+      [(ngModel)]="NewEmployee.Address"
+      type="text"
+      class="form-control"
+      id="Address"
+      name="Address"
+      placeholder="Address"
+      
+      required
+    />
+  </div>
+</div>
+<div class="form-group row">
+  <label for="Mobile" class="col-sm-2 col-form-label"
+    >Mobile</label
+  >
+  <div class="col-sm-10">
+    <input
+      [(ngModel)]="NewEmployee.Mobile"
+      type="text"
+      class="form-control"
+      id="Mobile"
+      name="Mobile"
+      placeholder="Mobile"
+      
+      required
+    />
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-sm-10">
+    <button [disabled]="!newPrdFrm.valid" type="submit" class="btn btn-primary">Save</button>
+    
+  </div>
+</div>
+</form>
+<span><button  class="btn btn-primary" (click)="goBack()">Back</button></span>

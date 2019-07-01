@@ -1,0 +1,50 @@
+<div>
+  <h1 style="color:green;">Product</h1>
+</div>
+<div>
+  <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">CategoryID</th>
+          <!-- <th scope="col">image</th> -->
+           <th scope="col">size</th>
+          <th scope="col">Weight</th> 
+          <th scope="col">Price</th>
+          <th scope="col">Image</th>
+          <!-- <th scope="col">Need Quantity</th> *ngFor="let prd of orderlist"-->
+          <th scope="col">UnitInStock</th>
+          <th scope="col">UnitOnOrder</th>
+          <th scope="col">ShortDescription</th>
+          <th scope="col">ProductAvailable</th> 
+        </tr>
+      </thead>
+      <tbody>
+        <tr >
+          <td>{{product.ProductID}}</td>
+          <td>{{product.Name}}</td>
+          <td>{{product.CategoryID}}</td>
+          <!-- <td><img [src]="prd.Imgpath" width="40" height="40"/></td> -->
+           <td>{{product.Size}}</td>
+          <td>{{product.UnitWeight}}</td> 
+          <td>{{product.UnitPrice}}</td>
+          <td><img [src]="product.ImageURL" width="50" height="50"/></td>
+
+          <td>{{product.UnitInStock}}</td>
+          <td>{{product.UnitOnOrder }}</td>
+          <td>{{product.ShortDescription}}</td>
+          <td>{{product.ProductAvailable}}</td>
+          <!-- <td><input type="number" #quantityinp/></td> -->
+          <!-- <td><a style="padding: 5px;" class="btn-primary" routerLink="/productUpdate/{{product.ProductID}}" routerLinkActive="active" >Update</a></td>
+            <td><input type="button" class="btn-danger" value="Delete" (click)="DeleteProduct(prd.OrderID)"/></td>
+            <td><a style="padding: 5px;"  routerLink="/Productdetails/{{product.ProductID}}" routerLinkActive="active" class="btn-primary"  >ViewDetail</a></td>
+         -->
+        </tr>
+        </tbody>
+    </table>
+     <!-- <div>For Testing: Total Price: {{orderTotalPrice}}</div>  -->
+  
+</div>
+
+<div><button  class="btn btn-primary" (click)="goBack()">Back</button></div>

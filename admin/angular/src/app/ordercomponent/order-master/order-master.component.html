@@ -1,0 +1,53 @@
+<div style="">
+  <h1>Order</h1><br/>
+  <!-- <input routerLink="/insertOrder" routerLinkActive="active" class="btn-success" style="width: 100px;" value="Add"/>
+   -->
+  <br/><br/>
+  <!-- Enter number of order<input type="number" min="1" [(ngModel)]="Ordernumber" name="orderid/> -->
+  <!-- <p>select category</p>
+  <select [(ngModel)]="selectedCatID" name="catt">
+    <option *ngFor="let cat of categorylist" [value]="cat.ID" name="selectcat">
+      {{cat.Name}}
+    </option>
+  </select> -->
+</div>
+<!-- <div>
+  <h3>catid:{{selectedCatID}}</h3>
+  <h3>TotalPrice:{{selectedCatID}}</h3>
+</div> -->
+<!-- <div style="background-color: gainsboro">
+  <app-orderdetail [selectedcatidfrommaster]="selectedCatID"></app-orderdetail>
+</div> -->
+<div >
+    <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">OrderID</th>
+            <th scope="col">CustomerID</th>
+            <th scope="col">ShippingID</th>
+            <!-- <th scope="col">image</th> -->
+            <th scope="col">TotalAmount</th>
+            <!-- <th scope="col">Need Quantity</th> -->
+            <!-- <th scope="col">Update</th> -->
+            <th scope="col">Delete</th>
+            <th scope="col">ViewDetail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prd of orderlist">
+            <td>{{prd.OrderID}}</td>
+            <td>{{prd.CustomerID}}</td>
+            <td>{{prd.ShippingID }}</td>
+            <!-- <td><img [src]="prd.Imgpath" width="40" height="40"/></td> -->
+            <td>{{prd.TotalAmount}}</td>
+            <!-- <td><input type="number" #quantityinp/></td> -->
+            <!-- <td><a style="padding: 5px;" class="btn-primary" routerLink="/orderupdate/{{prd.OrderID}}" routerLinkActive="active" >Update</a></td>
+             -->
+            <td><input type="button" class="btn-danger" value="Delete" (click)="Deleteorder(prd.OrderID)"/></td>
+            <td><a style="padding: 5px;"  routerLink="/orderdetails/{{prd.OrderID}}" routerLinkActive="active" class="btn-primary"  >ViewDetail</a></td>
+            
+          </tbody>
+      </table>
+       <!-- <div>For Testing: Total Price: {{orderTotalPrice}}</div>  -->
+    
+</div>

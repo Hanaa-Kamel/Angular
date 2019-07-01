@@ -1,0 +1,47 @@
+<div>
+    <h1 style="color:green;">Category</h1><br/>
+     <br/><br/>
+</div>
+<div>
+    <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">image1</th>
+            <th scope="col">image2</th>
+            <!-- <th scope="col">size</th>
+            <th scope="col">Weight</th> -->
+            <!-- <th scope="col">Price</th>
+            <th scope="col">Image</th> -->
+            <!-- <th scope="col">Need Quantity</th> *ngFor="let prd of orderlist"-->
+            <!-- <th scope="col">Update</th>
+            <th scope="col">Delete</th>-->
+            <th scope="col">IsActive</th> 
+          </tr>
+        </thead>
+        <tbody>
+          <tr >
+            <td>{{category.CategoryID}}</td>
+            <td>{{category.Name}}</td>
+            <td>{{category.Description }}</td>
+            <!-- <td><img [src]="prd.Imgpath" width="40" height="40"/></td> -->
+            <td><img [src]="category.Picture1" width="50" height="50"/></td> 
+            <td><img [src]="category.Picture2" width="50" height="50"/></td>
+            <td>{{category.IsActive}}</td>
+            <!-- <td><img [src]="Product.ImageURL" width="50" height="50"/></td> --> 
+            <!-- <td><input type="number" #quantityinp/></td> -->
+            <!-- <td><a style="padding: 5px;" class="btn-info" routerLink="/categoryUpdate/{{category.CategoryID}}" routerLinkActive="active" >Update</a></td>
+              <td><input type="button" class="btn-danger" value="Delete" (click)="DeleteCategory(category.CategoryID)"/></td>
+              <td><a style="padding: 5px;"  routerLink="/categorydetails/{{category.CategoryID}}" routerLinkActive="active" class="btn-primary"  >ViewDetail</a></td>
+           -->
+          </tr>
+          </tbody>
+      </table>
+       <!-- <div>For Testing: Total Price: {{orderTotalPrice}}</div>  -->
+    
+  </div>
+  <div>
+    <input type="button" (click)="goBack()" value="Back" class="btn-primary"/>
+  </div>

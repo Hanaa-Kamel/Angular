@@ -1,0 +1,43 @@
+ <div>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">image</th>
+        <th scope="col">Available qunatity</th>
+        <th scope="col">Need Quantity</th>
+        <th scope="col">TotalPrice</th>
+        <th scope="col">Buy</th>
+        <th scope="col">Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prd of listofproducts">
+        <td>{{prd.Name}}</td>
+        <td>{{prd.UnitPrice }}</td>
+        <td><img [src]="prd.ImageURL" width="40" height="40"/></td>
+        <td>{{prd.UnitInStock}}</td>
+        <td><input type="number" #quantityinp min="1"/></td>
+        <td> {{prd.Totalprice }}</td>
+        <td><input type="button" class="btn-primary" value="Buy" (click)="OnByclick(prd.UnitPrice,quantityinp.value,prd.ProductID,prd.UnitInStock)"/></td>
+        <td><input type="button" class="btn-danger" value="Remove" (click)="OnByclickremove(prd.ProductID)"/></td>
+    
+      </tbody>
+  </table>
+  <div>Total Price: {{orderTotalPrice}}<button class="btn-success" style="margin-left: 30px;padding: 5px;border-radius: 5px;" (click)="clearlocalstorage()">Send Order</button></div> 
+  <div style="height: 20px;clear: both;"></div>
+  <div *ngFor="let n of listproductsremove">{{n}}</div>
+  <!-- <span *ngFor="let prd of prdlist">
+      <span style="display: inline-flex;width: 303px;height: 380px;background-color: rgb(243, 241, 241);padding: 5px;margin: 10px;">
+        <img [src]="prd.ImageURL" height="350" width="200"/>
+        <div style="padding-top: 130px;">
+        <h6>Name : {{prd.Name}}</h6>
+        <h6>price : {{prd.UnitPrice}}</h6>
+        <h6>weight : {{prd.UnitWeight}}</h6>
+        <h6>title : {{prd.OfferTitle}}</h6>
+        <a routerLink="/Productdetails/{{prd.ProductID}}" class="btn-primary" style="padding: 4px;">View</a>
+        </div>
+      </span>    
+   </span> -->
+  

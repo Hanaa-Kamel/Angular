@@ -1,0 +1,17 @@
+.header{
+    background-color: black;
+    height: 50px;
+    padding: 10px;
+    flex-direction: row-reverse;
+    
+}
+.header a{
+    cursor: pointer;
+    padding: 12px;
+    text-decoration: none;
+    color: white;
+}
+.header a:hover{
+   
+    color: chocolate;
+}
